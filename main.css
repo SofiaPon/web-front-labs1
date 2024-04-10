@@ -25,6 +25,7 @@ main {
     color: Indigo; 
     font-family: Arial; 
     margin: 0px;
+    transition: 5s;
 }
 
 main:link {
@@ -39,6 +40,7 @@ main:visited {
 main:hover {
     color: red; 
     text-decoration: underline;
+    transition: 0.3s;
 }
 
 main:active {
