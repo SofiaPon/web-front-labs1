@@ -26,3 +26,22 @@ main {
     font-family: Arial; 
     margin: 0px;
 }
+
+main:link {
+    color: grey; 
+    
+}
+
+main:visited {
+    color: rgba(0, 0, 255, 0.534); 
+}
+
+main:hover {
+    color: red; 
+    text-decoration: underline;
+}
+
+main:active {
+    color: black; 
+    opacity: 0.3;
+}
