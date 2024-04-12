@@ -28,22 +28,46 @@ main {
     transition: 5s;
 }
 
-main:link {
+a {transition: 4s 1s;
+}
+
+a:link {
     color: grey; 
     
 }
 
-main:visited {
-    color: rgba(0, 0, 255, 0.534); 
+a:visited {
+    color: Indigo; 
 }
 
-main:hover {
+a:hover {
     color: red; 
     text-decoration: underline;
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
-main:active {
+a:active {
     color: black; 
     opacity: 0.3;
+}
+
+
+div.menu {
+    border: 3px solid #0088004d;
+    border-radius: 5px;
+    width: 250px;
+    color: black; 
+    padding: 0px 20px 0px 20px;
+    margin: 10px;
+    
+}
+
+div.menu:hover {
+    background-color: rgba(0, 255, 106, 0.11);
+    box-shadow: 0 0 15px rgb(128, 0, 0);
+}
+
+h1 {
+    text-align: center;
+
 }
