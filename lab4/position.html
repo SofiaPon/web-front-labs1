@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Позиционнирование</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="c:\Users\04sof\Desktop\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="c:\Users\04sof\Desktop\favicon-16x16.png">
+    <link rel="icon" href="c:\Users\04sof\Desktop\favicon-32x32.png">
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+<style>
+    div{
+        width: 300px;
+        height: 70px;
+        line-height: 70px;
+        text-align: center;
+        background-color: white;
+        border:dotted darkgreen;
+        margin: 15 px;
+    }
+
+.possition-relative {
+    position: relative;
+    left: 150px;
+    bottom: -110px;
+    z-index: -1;
+}
+
+
+.absolute {
+    transition: all 0.3s;
+}
+
+.absolute:hover {
+    transform: scale(1.1);
+    background-color: #ffcc00;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+</style>
+
+
+<main>
+    <div>static</div>
+    <div>static</div>
+    <div class="possition-relative bottom">relative</div>
+    <div>static</div>
+    <div>static</div>
+    <div class="absolute">absolute</div>
+    <div>static</div>
+    <div>static</div>
+    <div>static</div>
+    <div>static</div>
+</main>
+
+    <footer>
+        &copy; Пономарева София, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
