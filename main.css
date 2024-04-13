@@ -18,6 +18,9 @@ footer {
     padding: 5px; 
     font-size: 12pt; 
     text-align: right;
+    position: fixed;
+    bottom: 0;
+    margin: 10px 0px 10px;
 }
 
 main {
