@@ -55,7 +55,14 @@
             alert(author);
         }
 
-        
+        function changeOutput(buttonNum, backColor, textColor, borderColor) {
+            let output = document.getElementById('output');
+            output.innerHTML='Нажата кнопка ' + buttonNum;
+            output.style.backgroundColor= backColor;
+            output.style.color=textColor;
+            output.style.border=borderColor
+        }
+
     </script>
 
     <style>
@@ -66,7 +73,7 @@
             display: inline-block;
             padding: 5px 10px 5px 10px;
             text-align: center;
-            margin: 15px 0px 0px 15px;
+            margin: 15px 0px 20px 15px;
             cursor: pointer;
         }
 
@@ -76,6 +83,12 @@
 
         footer {
             cursor: pointer;
+        }
+
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
         }
     </style>
 </head>
@@ -94,6 +107,14 @@
         <div class="message" onclick="showYmn()">Найти произведение</div>
         <div class="message" onclick="showDel()">Найти деление</div>
         
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'darkred', 'white', '2px solid black')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'black', 'lime', '3px solid green')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'grey', 'blue', '5px solid purple ')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'green', 'orange', '3px solid brown')">
+        </div>
+
+        <div id="output"></div>
     </main>
 
     <footer ondblclick="alert('Приветствую вас на моей странице!\nHappiness is achieved when you stop waiting for it to happen and take steps to make it happen.')">
