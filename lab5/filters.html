@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фильтры</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="c:\Users\04sof\Desktop\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="c:\Users\04sof\Desktop\favicon-16x16.png">
+    <link rel="icon" href="c:\Users\04sof\Desktop\favicon-32x32.png">
+
+
+    <script>
+        function blurCh() {
+            let value=document.getElementById('blurValue').value+'px'
+            document.getElementById('blurOutput').innerText=value;
+            document.getElementById('blurImage').style.filter='blur('+value+')';
+        }
+
+        function contrastCh() {
+            let value=document.getElementById('contrastValue').value+'%';
+            document.getElementById('contrastOutput').innerText=value;
+            document.getElementById('contrastImage').style.filter='contrast('+value+')';
+        }
+
+        function brightCh() {
+            let value=document.getElementById('brightValue').value+'%';
+            document.getElementById('brightOutput').innerText=value;
+            document.getElementById('brightImage').style.filter='bright('+value+')';
+        }
+
+        function grayscaleCh() {
+            let value=document.getElementById('grayscaleValue').value+'%';
+            document.getElementById('grayscaleOutput').innerText=value;
+            document.getElementById('grayscaleImage').style.filter='grayscale('+value+')';
+        }
+
+        function hueRotateCh() {
+            let value=document.getElementById('hueRotateValue').value+'deg';
+            document.getElementById('hueRotateOutput').innerText=value;
+            document.getElementById('hueRotateImage').style.filter='hue-rotate('+value+')';
+        }
+
+        function invertCh() {
+            let value=document.getElementById('invertValue').value+'%';
+            document.getElementById('invertOutput').innerText=value;
+            document.getElementById('invertImage').style.filter='invert('+value+')';
+        }
+
+        function saturateCh() {
+            let value=document.getElementById('saturateValue').value+'%';
+            document.getElementById('saturateOutput').innerText=value;
+            document.getElementById('saturateImage').style.filter='saturate('+value+')';
+        }
+
+        function sepiaCh() {
+            let value=document.getElementById('sepiaValue').value+'%';
+            document.getElementById('sepiaOutput').innerText=value;
+            document.getElementById('sepiaImage').style.filter='sepia('+value+')';
+        }
+    </script>
+
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+
+    <main>
+        <div>
+            Фильтр blur;
+            <input type="range" min="0" max="500" value="100" onchange="blurCh()" id="blurValue">
+            <spam id="blurOutput"></spam>
+        </div>
+        <div><img src="cat.jpg" id="blurImage" style="height: 500px;"></div>
+
+        <div>
+            Фильтр contrast;
+            <input type="range" min="0" max="500" value="100" onchange="contrastCh()" id="contrastValue">
+            <spam id="contrastOutput"></spam>
+        </div>
+        <div><img src="cat.jpg" id="contrastImage" style="height: 500px;"></div>
+
+        <div>
+            Фильтр grayscale;
+            <input type="range" min="0" max="100" value="0" onchange="grayscaleCh()" id='grayscaleValue'>
+            <spam id="grayscaleOutput"></spam>
+        </div>
+        <div><img src="cat.jpg" id="grayscaleImage" style="height: 500px;"></div>
+
+        <div>
+            Фильтр hue-rotate;
+            <input type="range" min="0" max="360" value="0" onchange="hueRotateCh()" id="hueRotateValue">
+            <spam id="hueRotateOutput"></spam>
+        </div>
+        <div><img src="cat.jpg" id="hueRotateImage" style="height: 500px;"></div>
+
+        <div>
+            Фильтр bright;
+            <input type="range" min="0" max="500" value="100" onchange="brightCh()" id="brightValue">
+            <spam id="brightOutput"></spam>
+        </div>
+        <div><img src="cat.jpg" id="brightImage" style="height: 500px;"></div>
+
+        <div>
+            Фильтр invert;
+            <input type="range" min="0" max="100" value="0" onchange="invertCh()" id="invertValue">
+            <spam id="invertOutput"></spam>
+        </div>
+        <div><img src="cat.jpg" id="invertImage" style="height: 500px;"></div>
+
+        <div>
+            Фильтр saturate;
+            <input type="range" min="0" max="500" value="100" onchange="saturateCh()" id="saturateValue">
+            <spam id="saturateOutput"></spam>
+        </div>
+        <div><img src="cat.jpg" id="saturateImage" style="height: 500px;"></div>
+
+        <div>
+            Фильтр sepia;
+            <input type="range" min="0" max="100" value="0" onchange="sepiaCh()" id="sepiaValue">
+            <spam id="sepiaOutput"></spam>
+        </div>
+        <div><img src="cat.jpg" id="sepiaImage" style="height: 500px;"></div>
+    </main>
+
+    <footer>
+        &copy; Пономарева София, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
