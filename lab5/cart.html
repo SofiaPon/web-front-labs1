@@ -10,81 +10,73 @@
     <link rel="icon" href="c:\Users\04sof\Desktop\favicon-32x32.png">
 
 <script>
-    function showSum() {
-        let inputA = document.getElementById('numberA');
-        let inputB = document.getElementById('numberB');
-        let inputC = document.getElementById('numberC');
-        let inputD = document.getElementById('numberD');
-        let inputE = document.getElementById('numberE');
-
-        let a = parseInt(inputA.value);
-        let b = parseInt(inputB.value);
-        let c = parseInt(inputC.value);
-        let d = parseInt(inputD.value);
-        let e = parseInt(inputE.value);
-
-        let totalPrice = (a + b + c + d + e);
-        alert('Общая сумма продуктов равна: ' + totalPrice + ' руб.');
+    function calculate() {
+       let totalPrice=0;
+       let item1= parseInt(document.getElementById('item1').value);
+       let item2= parseInt(document.getElementById('item2').value);
+       let item3= parseInt(document.getElementById('item3').value);
+       let item4= parseInt(document.getElementById('item4').value);
+       let item5= parseInt(document.getElementById('item5').value);
+        if ((item1<0) || (item2<0) || (item3<0) || (item4<0) || (item5<0)) {
+            document.getElementById('total-price').innerText = 'Вы ввели значение меньше нуля'
+        } else {
+            totalPrice=item1*100+item2*150+item3*50+item4*70+item5*135;
+            document.getElementById('total-price').innerText='Общая сумма к оплате:'+ totalPrice;
+        }
     }
   
-    function ObSum(buttonNum) {
-            let output = document.getElementById('output');
-            output.innerHTML= totalPrice;
-            
+    function clearCart () {
+            document.getElementById('item1').value='';
+            document.getElementById('item2').value='';
+            document.getElementById('item3').value='';
+            document.getElementById('item4').value='';
+            document.getElementById('item5').value='';
+            document.getElementById('total-price').innerText='';
     }
 </script>    
     
 
 <style>
-    h1{text-align: center; font-size: 25px;}
-    label{line-height: 1.5;}
+   label{
+    display: block;
+    margin-bottom: 5px;
+   }
 
-    .knop{
-        height: 30px;
-        background-color: lightblue;
-        border: 2px solid black;
-        display: inline-block;
-        padding: 3px 3px 3px 3px;
-        text-align: center;
-        margin: 20px 0px 0px 0px;
-        cursor: pointer;
-        }
+    .cart-item{
+    margin-bottom: 10px;
+    }
 
+    button{
+        margin-top: 10px;
+    }
 
-    .cart{
-        border: 1px solid rgba(255, 0, 0, 0.575);
-        padding: 50px;
-        border-radius: 10px;
-        margin: 20px 400px 20px 20px;
-        box-shadow: 10px 10px 5px #0002;
-        background: linear-gradient(to right, rgb(13, 228, 192), rgb(255, 122, 237))
+    #total-price{
+        margin-top: 20px;
+        font-weight: bold;
     }
 
 </style>
    
 </head>
 <body>
+
     <header>
         НГТУ, ФБ, Лабораторная работа 5
     </header>
 
     <main>
-        <div class="cart">
 
-            <h1>Корзина товаров</h1>
-            <label>Яблоки(100р/шт) : <input type="number" value="количество яблок" min="0" id="numberA"></label><br>
-            <label>Бананы(150р/шт): <input type="number" value="количество бананов" min="0" id="numberB"></label><br>
-            <label>Персики(50р/шт): <input type="number" value="количество бананов" min="0" id="numberC"></label><br>
-            <label>Груши(70р/шт): <input type="number" value="количество бананов" min="0" id="numberD"></label><br>
-            <label>Мандарины(135р/шт): <input type="number" value="количество бананов" min="0" id="numberE"></label><br>
-            <label>Общая сумма: <span id="sumResult"></span></label><br>
-        <div>
-            <input type="button" value="Рассчитать" onclick="ObSum()">
-        </div>
-        
-        
-        </div>
-       
+        <h1>Корзина товаров</h1>
+        <label for="item1">Яблоки(100р/шт) : <input type="number" placeholder="количество яблок" min="0" id="item1"></label><br>
+        <label for="item2">Бананы(150р/шт): <input type="number" placeholder="количество бананов" min="0" id="item2"></label><br>
+        <label for="item3">Персики(50р/шт): <input type="number" placeholder="количество бананов" min="0" id="item3"></label><br>
+        <label for="item4">Груши(70р/шт): <input type="number" placeholder="количество бананов" min="0" id="item4"></label><br>
+        <label for="item5">Мандарины(135р/шт): <input type="number" placeholder="количество бананов" min="0" id="item5"></label><br>
+    
+        <button onclick="calculate()">Рассчитать</button>
+        <button onclick="calculate()">Очистить</button>
+
+        <div id="total-price"></div>
         
     </main>
 
