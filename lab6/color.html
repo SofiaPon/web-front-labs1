@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пономарева София Александровна. Лабораторная работа 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="c:\Users\04sof\Desktop\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="c:\Users\04sof\Desktop\favicon-16x16.png">
+    <link rel="icon" href="c:\Users\04sof\Desktop\favicon-32x32.png">
+
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <style>
+        .color-block {
+            width: 300px;
+            height: 120px;
+            text-align: center;
+            font-size: 20px;
+            line-height: 30px;
+            cursor: pointer;
+            padding: 30px 0px 0px;
+            margin: 20px 10px 20px 30px;
+            transition: background-color 1s;
+            background-color: yellow;
+        }
+    </style>
+
+    <script>
+        function changeColor(div) {
+            if(div.style.backgroundColor==='yellow') {
+                div.style.backgroundColor='red'; 
+                document.getElementById('color-name').innerHTML='красный';
+            }
+            else if(div.style.backgroundColor ==='red'){
+                div.style.backgroundColor='black';
+                div.style.color = 'white';
+                document.getElementById('color-name').innerHTML='черный';
+            }
+            else if (div.style.backgroundColor === 'black') {
+            div.style.backgroundColor = 'green';
+            div.style.color = 'white';
+            document.getElementById('color-name').innerHTML = 'зеленый';
+            } 
+            else if (div.style.backgroundColor === 'green') {
+            div.style.backgroundColor = 'purple';
+            div.style.color = 'white';
+            document.getElementById('color-name').innerHTML = 'фиолетовый';
+            }
+            else if (div.style.backgroundColor === 'purple') {
+            div.style.backgroundColor = 'pink';
+            div.style.color = 'black';
+            document.getElementById('color-name').innerHTML = 'розовый';
+            }
+            else {
+                div.style.backgroundColor='yellow';
+                document.getElementById('color-name').innerHTML='желтый';
+                div.style.color = 'black';
+            }
+        }
+    </script> 
+
+</head>
+
+<body>
+    
+    <div class="color-block" ondblclick="changeColor(this)">
+        Цвет: <span id="color-name">желтый</span><br>
+        Сделайте двойной щелчок, чтобы сменить.
+    </div>
+    
+   
+    
+    <main>
+        
+    </main>
+
+
+
+    <footer>
+        &copy; Пономарева София, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
