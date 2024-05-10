@@ -13,32 +13,68 @@
         .container {
             margin: 20px;
         }
+
+        tr{
+        text-align: center;   
+        }
+
+        label{
+            margin: 45px; 
+        }
+
+        
     </style>   
       
       <script>
+
+       
+
         function calculateTotal() {
-            let balance = parseInt(document.getElementById('balance').value);
-            let total = 0;
-            let error = false;
-    
-            for (let i = 1; i <= 7; i++) {
-                let quantity = parseInt(document.getElementById('item' + i).value) || 0;
-    
-                if (quantity < 0) {
-                    error = true;
-                    document.getElementById('result').textContent = 'Ошибка: Количество товара не может быть отрицательным.';
-                    return;
-                }
-    
-                total += quantity;
+            let inputBalance = document.getElementById('balance');
+            let balance = Math.max(parseInt(inputBalance.value), 0);
+
+            let Item1 = document.getElementById('item1');
+            let Item2 = document.getElementById('item2');
+            let Item3 = document.getElementById('item3');
+            let Item4 = document.getElementById('item4');
+            let Item5 = document.getElementById('item5');
+            let Item6 = document.getElementById('item6');
+            let Item7 = document.getElementById('item7');
+
+            let a = parseInt(Item1.value) || 0;
+            let b = parseInt(Item2.value) || 0;
+            let c = parseInt(Item3.value) || 0;
+            let d = parseInt(Item4.value) || 0;
+            let e = parseInt(Item5.value) || 0;
+            let f = parseInt(Item6.value) || 0;
+            let g = parseInt(Item7.value) || 0;
+
+            let priceA = 75;
+            let priceB = 45;
+            let priceC = 55;
+            let priceD = 100;
+            let priceE = 150;
+            let priceF = 299;
+            let priceG = 167;
+
+            let itog = (a * priceA) + (b * priceB) + (c * priceC) + (d * priceD) + (e * priceE) + (f * priceF) + (g * priceG);
+            document.getElementById('output').innerHTML = 'Итого: ' + itog + ' рублей';
+            let message = document.getElementById('result');
+
+            if (balance === '' || isNaN(Number(balance))) {
+                message.innerHTML = 'Введите остаток средств на балансе!';
             }
-    
-            if (total === 0) {
-                document.getElementById('result').textContent = 'Выберите хотя бы один товар.';
-            } else if (total > balance) {
-                document.getElementById('result').textContent = 'Ошибка: Общая сумма превышает ваш баланс.';
-            } else {
-                document.getElementById('result').textContent = 'Товар успешно оформлен. Общая сумма: ' + total + '.';
+            else if (balance < itog) {
+                message.innerHTML = 'У вас недостаточно средств на балансе!';
+            }
+            else if (a < 0 || b < 0 || c < 0 || d < 0 || e < 0 || f < 0 || g < 0) {
+                message.innerHTML = 'Количество товара не может быть отрицательным!';
+            }
+            else if (!a && !b && !c && !d && !e && !f && !g) {
+                message.innerHTML = 'Нужно выбрать хотя бы один товар!';
+            }
+            else {
+                message.innerHTML = 'Товар успешно оформлен!';
             }
         }
     </script>
@@ -51,22 +87,69 @@
 
 <main>
     <div class="container">
-        <label for="balance">Мой баланс:</label>
-        <input type="number" id="balance">
+        <div>
+            <label>Мой баланс: <input type="number" placeholder="Введите количество средств" min="0" id="balance"></label>
+        </div>
 
         <ul id="cart">
-            <li>Товар 1: <input type="number" id="item1"></li>
-            <li>Товар 2: <input type="number" id="item2"></li>
-            <li>Товар 3: <input type="number" id="item3"></li>
-            <li>Товар 4: <input type="number" id="item4"></li>
-            <li>Товар 5: <input type="number" id="item5"></li>
-            <li>Товар 6: <input type="number" id="item6"></li>
-            <li>Товар 7: <input type="number" id="item7"></li>
+           
+            
+            <table border="1" width = 100%>
+                <tr>
+                    <td><b>№</b></td>
+                    <td><b>Название</b></td>
+                    <td><b>Цена</b></td>
+                    <td><b>Количество</b></td>
+                </tr>
+                <tr>
+                    <td><b>1</b></td>
+                    <td><b>Молоко</b></td>
+                    <td><b>75 р</b></td>
+                    <td><b><input type="number" id="item1" placeholder="Введите количество" min="0"></b></td>
+                </tr>
+                <tr>
+                    <td><b>2</b></td>
+                    <td><b>Хлеб</b></td>
+                    <td><b>45 р</b></td>
+                    <td><b><input type="number" id="item2" placeholder="Введите количество" min="0"></b></td>
+                </tr>
+                <tr>
+                    <td><b>3</b></td>
+                    <td><b>Киндер Pingui</b></td>
+                    <td><b>55 р</b></td>
+                    <td><b><input type="number" id="item3" placeholder="Введите количество" min="0"></b></td>
+                </tr>
+                <tr>
+                    <td><b>4</b></td>
+                    <td><b>Чай черный</b></td>
+                    <td><b>100 р</b></td>
+                    <td><b><input type="number" id="item4" placeholder="Введите количество" min="0"></b></td>
+                </tr>
+                <tr>
+                    <td><b>5</b></td>
+                    <td><b>Сыр косичка</b></td>
+                    <td><b>150 р</b></td>
+                    <td><b><input type="number" id="item5" placeholder="Введите количество" min="0"></b></td>
+                </tr>
+                <tr>
+                    <td><b>6</b></td>
+                    <td><b>Колбаса докторская</b></td>
+                    <td><b>299 р</b></td>
+                    <td><b><input type="number" id="item6" placeholder="Введите количество" min="0"></b></td>
+                </tr>
+                <tr>
+                    <td><b>7</b></td>
+                    <td><b>Крабовые палочки</b></td>
+                    <td><b>167 р</b></td>
+                    <td><b><input type="number" id="item7" placeholder="Введите количество" min="0"></b></td>
+                </tr>
+
         </ul>
 
-        <button onclick="calculateTotal()">OK</button>
-
-        <p id="result"></p>
+        <button onclick="calculateTotal()">OK</button><br>
+        <br>
+        <div id="output"></div>
+        <div id="result"></div><br>
     </div>
 
 </main>
