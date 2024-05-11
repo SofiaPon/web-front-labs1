@@ -20,9 +20,34 @@
         color: #333; 
         text-align: center;
         }
+
+        h1 {
+            font-size: 18pt;
+            color: blueviolet;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .rules-container {
+        border: 2px solid #333; 
+        border-radius: 10px; 
+        width: 80%; 
+        margin: 10px auto; 
+        padding: 20px; 
+        background-color: #f0f0f0; 
+        color: #333; 
+        text-align: center; color: black;
+        
+        }
     </style>
 
-    <script>
+   
+
+
+
+
+</head>
+
+ <script>
         let number;
         let count=0;
         function startGame() {
@@ -79,12 +104,19 @@
 
             }
         }
+        function toggleRules() {
+            let rulesList = document.getElementById('rules-list');
+            let rulesButton = document.querySelector('.rules-button');
+            
+            if (rulesList.style.display == 'none') {
+                rulesList.style.display = 'block';
+
+            } else {
+                rulesList.style.display = 'none';
+            }
+        }
     </script>
 
-
-
-
-</head>
 <body>
     <header>
         НГТУ, ФБ, Лабораторная работа 6
@@ -119,8 +151,19 @@
                 <button onclick="again()">Сыграть еще раз</button>
             </div>
         </div>
-    </main>
 
+        <div class="rules-container">
+            <button onclick="toggleRules()">Показать правила игры</button>
+            <ol id="rules-list" style="display: none; color: black; font-size: 12pt;" type="I">
+                <li>Нажми на кнопку "Сыграть в игру"</li>
+                <li>Введите любое число</li>
+                <li>Нажмите на кнопку "Угадать"</li>
+                <li>Посмотрите, совпадает ли число, которое вы загадали с задуманным числом</li>
+                <li>Если хотите сыграть ещё раз, нажмите на кнопку "Сыграть ещё раз"</li>
+            </ol>
+        </div>
+    </main>
+ 
 
 
     <footer>
