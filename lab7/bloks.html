@@ -72,8 +72,22 @@
                 newBlock.innerHTML=`${i}`;
                 main.appendChild(newBlock);
             }
-                
+        }
 
+        function polblock(){
+            let main = document.querySelector('main');
+            for(let i=0; i<10; i++){
+                let newBlock = document.createElement('div');
+                    newBlock.style.backgroundColor = 'black';
+                    newBlock.style.height = '40px';
+                    newBlock.style.border = '2.5px solid grey';
+                    newBlock.style.width = '100px';
+                    newBlock.style.opacity = `${0 + i*10}%`;
+                    newBlock.style.margin = '10px 0';
+
+                    newBlock.innerHTML = `Блок № ${i}`;
+                    main.appendChild(newBlock); 
+            }
         }
     </script>
 
@@ -98,6 +112,7 @@
       <button onclick="addNewBlocks()">Добавить блоки</button> 
       <button onclick="add20_50()">20 => 50</button> 
       <button onclick="add10_80()">10 => -80</button> <br>
+      <button onclick="polblock()">Полупрозрачные блоки</button>
     </main>
 
     <footer>
