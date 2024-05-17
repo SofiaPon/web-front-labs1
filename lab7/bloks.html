@@ -89,6 +89,38 @@
                     main.appendChild(newBlock); 
             }
         }
+
+        function colorcyc () {
+            let inputCircles = document.getElementById('qtCircles');
+                let inCr = parseInt(inputCircles.value) || 0;
+
+                let main = document.querySelector('main');
+                for(let i = inCr; i>0; i--) {    
+                    let newBlock = document.createElement('div');
+                    newBlock.style.height = '40px';
+                    newBlock.style.border = '2px solid black';
+                    newBlock.style.borderRadius = '50%';
+                    newBlock.style.width = '40px';
+                    newBlock.style.margin = '10px 4px';
+                    newBlock.style.display = 'inline-block';
+                    newBlock.style.justifyContent = 'center';
+                    newBlock.style.alignItems = 'center';
+                    newBlock.style.textAlign = 'center';
+                    newBlock.style.fontSize = '17pt';
+                    newBlock.style.fontWeight = 'bold';
+                    newBlock.style.lineHeight = '40px';
+                    newBlock.style.color = 'black';
+
+                    if (i % 2 === 0) {
+                        newBlock.style.backgroundColor = 'white';
+                    } else {
+                        newBlock.style.backgroundColor = 'beige';
+                    }
+
+                    newBlock.innerHTML = `${i}`
+                    main.appendChild(newBlock);
+                }
+        }
     </script>
 
     <style>
@@ -108,11 +140,13 @@
     </header>
 
     <main>
-      <button onclick="addNewBlock()">Добавить блок</button>
-      <button onclick="addNewBlocks()">Добавить блоки</button> 
-      <button onclick="add20_50()">20 => 50</button> 
-      <button onclick="add10_80()">10 => -80</button> <br>
-      <button onclick="polblock()">Полупрозрачные блоки</button>
+        <button onclick="addNewBlock()">Добавить блок</button>
+        <button onclick="addNewBlocks()">Добавить блоки</button> 
+        <button onclick="add20_50()">20 => 50</button> 
+        <button onclick="add10_80()">10 => -80</button> <br>
+        <button onclick="polblock()">Полупрозрачные блоки</button> <br>
+        <input type="number" placeholder="Введите количество кругов" min="0" id="qtCircles">
+        <button onclick="colorcyc()">Цветные круги</button><br>
     </main>
 
     <footer>
