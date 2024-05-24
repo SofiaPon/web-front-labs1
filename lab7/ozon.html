@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пономарева София Александровна. Котировки акций компании Ozon</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="c:\Users\04sof\Desktop\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="c:\Users\04sof\Desktop\favicon-16x16.png">
+    <link rel="icon" href="c:\Users\04sof\Desktop\favicon-32x32.png">
+
+    <script>
+        function showStock() {
+            const prices = [
+                2805.00, 2931.00, 2827.5, 2836.00, 2878.50,
+                2837.00, 3128.00, 3059.50, 3270.00, 3335.00
+            ];
+            const dates = [
+                '01.01.2024', '08.01.2024', '15.01.2024', '22.01.2024', '29.01.2024',
+                '05.02.2024', '12.02.2024', '19.02.2024', '26.02.2024', '04.03.2024'
+            ];
+
+            let table = document.getElementById('tatoil-table');
+            let maxPrice = prices[0];
+            let minPrice = prices[0];
+            for(let i = 0; i < prices.length; i++) {
+                let tr = document.createElement('tr'); 
+                let tdPrice = document.createElement('td');
+                let tdDate = document.createElement('td');
+                let tdDiff = document.createElement('td');
+                tdDate.innerText = dates[i];
+                tdPrice.innerText = prices[i];
+
+                if (i > 0) {
+                    let diff = prices[i] - prices[i - 1];
+                    tdDiff.innerText = diff.toFixed(1);
+                } else {
+                    tdDiff.innerText = '-';
+                }
+
+                tr.appendChild(tdDate);
+                tr.appendChild(tdPrice);
+                tr.appendChild(tdDiff);
+                table.appendChild(tr);
+
+                if (prices[i] > maxPrice) {
+                    maxPrice = prices[i];
+                }
+                if (prices[i] < minPrice) {
+                    minPrice = prices[i];
+                }
+            }
+            
+            let sum = 0;
+            for(let i = 0; i < prices.length; i++) {
+                sum += prices[i]; 
+            }
+            let average = (sum / prices.length).toFixed('1');
+
+            let averageRes = document.getElementById('average');
+            averageRes.innerHTML = `Среднее значение: ${average}`;
+
+            let minRes = document.getElementById('min');
+            minRes.innerHTML = `Минимальное значение: ${minPrice.toFixed(1)}`;
+
+            let maxRes = document.getElementById('max');
+            maxRes.innerHTML = `Максимальное значение: ${maxPrice.toFixed(1)}`;                
+        }
+    </script>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: fit-content;
+            height: fit-content;
+            text-align: center;
+            align-items: center;
+            line-height: 1.6;
+            margin: 10px 10px 10px 10px;
+        }
+        button{
+            margin: 10px 10px 10px 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <button onclick="showStock()">Курс акций Ozon</button>
+        <table border="1" id="tatoil-table"></table>
+        <div id="average"></div>
+        <div id="min"></div>
+        <div id="max"></div>
+    </main>
+
+    <footer>
+        &copy; Пономарева София, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
