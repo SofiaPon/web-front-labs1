@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пономарева София Александровна. Лабораторная работа 8</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="c:\Users\04sof\Desktop\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="c:\Users\04sof\Desktop\favicon-16x16.png">
+    <link rel="icon" href="c:\Users\04sof\Desktop\favicon-32x32.png">
+    <script src="time.js"></script>
+
+    <style>
+        #time {
+            position: absolute;
+            top: 3px;
+            right: 10px;
+            font-size: 24px;
+            color: #0e0e0e;
+            padding: 8px;
+            background-color: #6d36b6;
+            border-radius: 8px;
+            box-shadow: 4px 2px 2px rgba(247, 247, 247, 0.3);
+        }
+        #seconds {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 58px;
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+            background-color: white;
+            z-index: 1;
+            border: 3px solid rgb(255, 0, 0);
+        }
+        .clock {
+            width: 300px;
+            height: 300px;
+            border: 10px solid rgb(105, 105, 105);
+            border-radius: 50%;
+            position: relative;
+            margin: 50px auto;
+            top: 50%;
+            background-color: rgb(0, 0, 0);
+        }
+        #second-hand {
+            width: 50%;
+            height: 6px;
+            background: rgb(255, 0, 0);
+            z-index: 2;
+            position: absolute;
+            top: 50%;
+            transform-origin: 100%;
+            transform: rotate(90deg);
+            transition: transform 0.5s ease-in-out;
+        }
+    </style>
+       
+
+</head>
+<body onload="showTime()">
+    <header>
+        НГТУ, ФБ, Лабораторная работа 8
+        <div id="time">00:00:00</div>
+    </header>
+
+    <main>
+        <div id="seconds"></div>
+        <div class="clock">
+            <div id="second-hand"></div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Пономарева София, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
