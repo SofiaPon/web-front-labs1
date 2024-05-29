@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пономарева София Александровна. Лабораторная работа 8</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="c:\Users\04sof\Desktop\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="c:\Users\04sof\Desktop\favicon-16x16.png">
+    <link rel="icon" href="c:\Users\04sof\Desktop\favicon-32x32.png">
+    <script src="lab8.js"></script>
+    <style>
+        li{
+            padding: 10px 20px 20px 10px;
+        }  
+        
+        .frame {
+            border: 3px solid rgb(0, 0, 0);
+            background-color: lightcyan;
+            padding: 30px;
+            width: fit-content;
+            margin: 10px 10px 10px 10px;
+            text-align: justify;
+        }
+        .daysWeek {
+            border: 3px solid rgba(103, 31, 170, 0.651);
+            border-radius: 90px;
+            background-color: rgb(138, 177, 228);
+            padding: 30px;
+            width: fit-content;
+            margin: 10px 10px 10px 10px;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body onload="showDate()">
+    <header>
+        НГТУ, ФБ, Лабораторная работа 8
+    </header>
+
+    <main>
+        <div id="current-date"></div><br>
+        <div class="daysWeek">
+            <label for="day">
+                День: <input type="number" id="day" min="1" max="31" required>
+            </label>
+            <label for="month">
+                Месяц: <input type="number" id="month" min="1" max="12" required>
+            </label>
+            <label for="year">
+                Год: <input type="number" id="year" min="1900" max="2100" required>
+            </label>
+            <button onclick="getDayOfWeek()">Определить день недели</button>
+            <div id="day-of-week"></div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Пономарева София, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
