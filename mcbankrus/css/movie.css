@@ -1,0 +1,11 @@
+.movie {
+    text-align: center;
+}
+
+.menu-item a:hover {
+    border-color: #333333;
+}
+
+.menu-item a {
+    color: #333333;
+}

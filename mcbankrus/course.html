@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/course.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курс валют</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div>
+                <img src="images/15.png" alt="Логотип">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li class="menu-item">
+                        <a href="news.html">Новости</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="index.html">О банке</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="contacts.html">Контактные данные</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="movie.html">Видео</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <section class="main">
+            <div class="converter">
+                <div class="converter-block">
+                    <h2>Конвертер валюты</h2>
+                    <div class="coverter-inputs-to">
+                        <input type="number" class="converter-input" placeholder="Рубли" id="input-from-ruble">
+                        <div>
+                            <input type="number" class="converter-input" placeholder="Индийская рупия" id="input-to-rupia" disabled>
+                        </div>
+                        <input class="converter-input button"  type="button" id="button-to" value="Конвертировать">
+                    </div>
+                    <div class="converter-inputs-from">
+                        <input type="number" class="converter-input" placeholder="Индийская рупия " id="input-from-rupia">
+                        <div>
+                            <input type="number" class="converter-input" placeholder="Рубли" id="input-to-ruble" disabled>
+                        </div>
+                        <input class="converter-input button"  type="button" id="button-from" value="Конвертировать">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        ©2024, Пономарева София
+    </footer>
+
+    <script src="https://www.cbr-xml-daily.ru/money.js"></script>
+    <script src="scripts/course.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
